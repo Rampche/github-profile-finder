@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 //import Container from '../models/container'
 
 const Container = () => {
@@ -10,7 +10,7 @@ const Container = () => {
       </p>
       <input
         type="text"
-        className="border-b-2 border-sky-800 border-solid border-0 outline-none py-1.5 pl-7 pr-20 w-2/3  text-gray-900 placeholder:text-gray-400 focus: sm:text-sm sm:leading-6"
+        className="border-b-2 bg-transparent border-sky-800 border-solid border-0 outline-none py-1.5 pl-7 pr-20 w-2/3  text-gray-900 placeholder:text-gray-300 focus: text-gray-300 sm:text-sm sm:leading-6"
         placeholder="Insert the user here"
       />
     </div>
