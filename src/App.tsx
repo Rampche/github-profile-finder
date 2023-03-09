@@ -8,6 +8,7 @@ function App() {
   const toggleTheme = () => {
     setIsDark(!isDark);
   };
+  
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       <Outlet />

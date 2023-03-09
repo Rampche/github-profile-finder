@@ -16,6 +16,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/user', element: <UserInfo /> },
       { path: '/error', element: <Error /> },
+      //Adicionar um novo objeto com o base name
     ],
   },
 ]); //TODO:Adicionar um novo objeto com o base name
