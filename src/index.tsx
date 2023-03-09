@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { path: '/error', element: <Error /> },
     ],
   },
-]);
+]); //TODO:Adicionar um novo objeto com o base name
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
