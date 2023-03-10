@@ -8,13 +8,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home';
 import Error from './routes/Error';
 import UserInfo from './routes/UserInfo';
+import UserPortfolios from './routes/UserPortfolios';
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
-      { path: '/', element: <Home /> },
+      { path: '/home', element: <Home /> },
       { path: '/user', element: <UserInfo /> },
+      { path: '/user-portfolios', element: <UserPortfolios /> },
       { path: '/error', element: <Error /> },
       //Adicionar um novo objeto com o base name
     ],
