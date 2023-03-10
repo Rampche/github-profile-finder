@@ -1,13 +1,18 @@
-/* import { createContext } from "react";
+import React, { createContext, useState } from "react";
+import { ContextType } from "../models/fetchContext";
+import { UserProps } from "../models/user";
 
-const FetchContext = createContext<T> ({
+export const FetchContext = createContext({} as ContextType);
 
-}) */
+const ContextProvider = (props: any) => {
+  const [userData, setUserData] = useState<UserProps>();
+  //TODO Criar tipagem à parte para userData (Passar o mouse por cima). Talvez num ficheiro à parte.
 
-import React from 'react';
-
-const FetchContext = () => {
-  return <></>;
+  return (
+    <FetchContext.Provider value={{ userData, setUserData }}>
+      {props.children}
+    </FetchContext.Provider>
+  );
 };
 
-export default FetchContext;
+export default ContextProvider;

@@ -1,20 +1,45 @@
-import React, { useState } from 'react';
-import { api } from '../../services/fetchUser';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import { api } from "../../services/fetchUser";
+import { useNavigate } from "react-router-dom";
+import { UserProps } from "../../models/user";
+import {FetchContext} from "../../contexts/FetchContext";
 
 const Search = () => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
+  const ctx = useContext(FetchContext);
 
   const handleClick = async (username: string) => {
     try {
       const response = await api.get(`/${username}`);
       console.log(response.data);
+      const {
+        avatar_url,
+        login,
+        name,
+        followers,
+        following,
+        public_repos,
+        bio,
+        location,
+      } = response.data;
+      const userData: UserProps = {
+        avatar_url,
+        login,
+        name,
+        followers,
+        following,
+        public_repos,
+        bio,
+        location,
+      };
+      ctx.setUserData(userData);
+      username && navigate("/user");
+      //return userData;
     } catch (error) {
       console.log(error);
       throw error;
     }
-    username && navigate('/user');
     //TODO: usar useState para tratamento de erros (deixar input vermelho).
   };
 
