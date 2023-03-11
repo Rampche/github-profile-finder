@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
-import { api } from "../../services/fetchUser";
-import { useNavigate } from "react-router-dom";
-import { UserProps } from "../../models/user";
-import {FetchContext} from "../../contexts/FetchContext";
+import React, { useState, useContext } from 'react';
+import { api } from '../../services/fetchUser';
+import { useNavigate } from 'react-router-dom';
+import { UserProps } from '../../models/user';
+import { FetchContext } from '../../contexts/FetchContext';
 
 const Search = () => {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState('');
   const navigate = useNavigate();
   const ctx = useContext(FetchContext);
 
@@ -34,7 +34,7 @@ const Search = () => {
         location,
       };
       ctx.setUserData(userData);
-      username && navigate("/user");
+      username && navigate('/user');
       //return userData;
     } catch (error) {
       console.log(error);
@@ -44,23 +44,25 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <input
-        type="text"
-        className="border-b-2 bg-transparent outline-none border-white border-solid py-1.5 pl-7 pr-7 w-auto text-center  dark:text-gray-900 placeholder:text-gray-300 focus: text-gray-300 sm:text-s sm:leading-6"
-        placeholder="Insert the user here"
-        onChange={(e) => {
-          setUsername(e.target.value);
-        }}
-      />
-      <button
-        type="button"
-        className="bg-white mt-3 rounded border-sky-600 hover:scale-105 transform-gpu"
-        onClick={() => handleClick(username)}
-      >
-        Search User
-      </button>
-    </div>
+    <>
+      <div className="flex flex-col">
+        <input
+          type="text"
+          className="border-b-2 bg-transparent outline-none border-white border-solid py-1.5 pl-7 pr-7 w-auto text-center  dark:text-gray-900 placeholder:text-gray-300 focus: text-gray-300 sm:text-s sm:leading-6"
+          placeholder="Insert the user here"
+          onChange={(e) => {
+            setUsername(e.target.value);
+          }}
+        />
+        <button
+          type="button"
+          className="bg-white mt-3 rounded border-sky-600 hover:scale-105 transform-gpu"
+          onClick={() => handleClick(username)}
+        >
+          Search User
+        </button>
+      </div>
+    </>
   );
 };
 

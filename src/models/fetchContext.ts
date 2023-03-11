@@ -1,8 +1,17 @@
-import { UserProps } from "./user";
-import { useState } from "react";
+import { UserProps } from './user';
 
 export interface ContextType {
-  userData: UserProps | undefined;
+  userData:
+    | {
+        avatar_url: string;
+        login: string;
+        name: string;
+        followers: number;
+        following: number;
+        public_repos: number;
+        bio: string;
+        location: string;
+      }
+    | undefined;
   setUserData: React.Dispatch<React.SetStateAction<UserProps | undefined>>;
 }
-

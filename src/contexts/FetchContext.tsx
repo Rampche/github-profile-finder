@@ -1,12 +1,25 @@
-import React, { createContext, useState } from "react";
-import { ContextType } from "../models/fetchContext";
-import { UserProps } from "../models/user";
+import React, { createContext, useState } from 'react';
+import { ContextType } from '../models/fetchContext';
+import { UserProps } from '../models/user';
 
-export const FetchContext = createContext({} as ContextType);
+export const FetchContext = createContext<{
+  userData:
+    | {
+        avatar_url: string;
+        login: string;
+        name: string;
+        followers: number;
+        following: number;
+        public_repos: number;
+        bio: string;
+        location: string;
+      }
+    | undefined;
+  setUserData: React.Dispatch<React.SetStateAction<UserProps | undefined>>;
+}>({} as ContextType);
 
 const ContextProvider = (props: any) => {
   const [userData, setUserData] = useState<UserProps>();
-  //TODO Criar tipagem à parte para userData (Passar o mouse por cima). Talvez num ficheiro à parte.
 
   return (
     <FetchContext.Provider value={{ userData, setUserData }}>

@@ -6,3 +6,10 @@
     font-family: Rubik, sans-serif;
   }
 }
+
+.def-fx-col {
+  @apply flex flex-col justify-center items-center;
+}
+.def-fx-row {
+  @apply flex flex-row justify-center items-center;
+}

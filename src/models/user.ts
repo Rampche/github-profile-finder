@@ -8,7 +8,3 @@ export type UserProps = {
   bio: string;
   location: string;
 };
-
-export type UserInfo = {
-  userInfo: string;
-};

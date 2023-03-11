@@ -1,18 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import { FetchContext } from '../../contexts/FetchContext';
 
 const UserContainer = () => {
+  const ctx = useContext(FetchContext);
+
   return (
-    <div className="m-auto bg-slate-100 w-2/4 h-5/6 rounded flex flex-col justify-around items-center p-14">
-      <img alt="sample-img" />
-      <h1>Profile Name</h1>
-      <p>Bio</p> {/* {bio? bio : 'No Description'} */}
-      <section
-        className="flex justify-between
-       items-center w-full"
-      >
-        <p>Repositórios</p>
-        <p>Seguidores</p>
-        <p>Seguindo</p>
+    <div className="m-auto bg-slate-100 w-2/4 h-5/6 rounded flex flex-col justify-around items-center p-14 ">
+      <img
+        className="w-48 h-48 rounded-full"
+        src={ctx.userData?.avatar_url}
+        alt="sample-img"
+      />
+      <h1>{ctx.userData?.name}</h1>
+      {ctx.userData?.bio ? <p>{ctx.userData?.bio}</p> : <p>No bio available</p>}
+
+      <section className="flex justify-around items-center w-full">
+        <section className="def-fx-col">
+          <p>{ctx.userData?.public_repos}</p>
+          <p>Repositories</p>
+        </section>
+
+        <section className="def-fx-col">
+          <p>{ctx.userData?.followers}</p>
+          <p>Followers</p>
+        </section>
+
+        <section className="def-fx-col">
+          <p>{ctx.userData?.following}</p>
+          <p>Following</p>
+        </section>
       </section>
     </div>
   );
