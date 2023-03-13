@@ -52,9 +52,9 @@ const Search: React.FC = () => {
         )}
         <input
           type="text"
-          className={`border-b-2 bg-transparent outline-none border-white border-solid py-1.5 pl-7 pr-7 w-auto text-center dark:text-gray-300 placeholder:text-gray-300 focus:text-gray-300 sm:text-s sm:leading-6 dark:border-[#001E3C] dark:placeholder:text-[#0f2842] dark:focus:text-[#0f2842] ${
+          className={` border-b-2 bg-transparent outline-none border-white border-solid py-1.5 pl-7 pr-7 w-auto text-center dark:text-gray-300 placeholder:text-gray-300 focus:text-gray-300 sm:text-s sm:leading-6 dark:border-[#001E3C] dark:placeholder:text-[#0f2842] dark:focus:text-[#0f2842] ${
             error && 'border-red-700'
-          }`}
+          } `}
           placeholder="Insert the user here"
           onChange={(e) => {
             setUsername(e.target.value);

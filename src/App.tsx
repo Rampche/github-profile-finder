@@ -17,17 +17,19 @@ function App() {
 
   return (
     <>
-      <Switch
-        checked={!enabled}
-        onChange={toggleTheme}
-        className="absolute h-6 w-11 rounded-full inline-flex items-center dark:bg-white bg-[#001E3C]"
-      >
-        <span
-          className={`w-4 h-4 bg-white rounded-full inline-block transform transition dark:bg-[#001E3C] ${
-            enabled ? 'translate-x-6' : 'translate-x-1'
-          }`}
-        ></span>
-      </Switch>
+      <div className="w-full flex justify-center">
+        <Switch
+          checked={!enabled}
+          onChange={toggleTheme}
+          className="absolute mt-3 mx-auto h-6 w-11 rounded-full inline-flex items-center dark:bg-white bg-[#001E3C]"
+        >
+          <span
+            className={`w-4 h-4 bg-white rounded-full inline-block transform transition dark:bg-[#001E3C] ${
+              enabled ? 'translate-x-6' : 'translate-x-1'
+            }`}
+          ></span>
+        </Switch>
+      </div>
       <ContextProvider>
         <Outlet />
       </ContextProvider>
