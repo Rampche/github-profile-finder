@@ -10,18 +10,23 @@ import Error from './routes/Error';
 import UserInfo from './routes/UserInfo';
 //import UserPortfolios from './routes/UserPortfolios';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      element: <App />,
+      children: [
+        { path: '/', element: <Home /> },
+        { path: '/user', element: <UserInfo /> },
+        //      { path: '/user-portfolios', element: <UserPortfolios /> },
+        { path: '/*', element: <Error /> },
+        //Adicionar um novo objeto com o base name
+      ],
+    },
+  ],
   {
-    element: <App />,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/user', element: <UserInfo /> },
-      //      { path: '/user-portfolios', element: <UserPortfolios /> },
-      { path: '/*', element: <Error /> },
-      //Adicionar um novo objeto com o base name
-    ],
-  },
-]); //TODO:Adicionar um novo objeto com o base name
+    basename: 'github-profile-finder',
+  }
+);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
