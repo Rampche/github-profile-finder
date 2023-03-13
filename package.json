@@ -2,6 +2,7 @@
   "name": "github-profile-finder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rampche.github.io/github-profile-finder/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
@@ -31,7 +32,7 @@
     "build": "react-scripts build && rm -rf docs && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  }, 
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
