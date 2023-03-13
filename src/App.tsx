@@ -16,18 +16,22 @@ function App() {
   const toggleTheme = () => setEnabled(!enabled);
 
   return (
-    <div className={`bg-white ${enabled ? 'dark:bg-sky-900' : 'bg-white'}`}>
+    <>
       <Switch
         checked={!enabled}
         onChange={toggleTheme}
-        className="h-6 w-11 rounded-full relative inline-flex items-center bg-sky-900"
+        className="absolute h-6 w-11 rounded-full inline-flex items-center dark:bg-white bg-[#001E3C]"
       >
-        <span className="w-4 h-4 bg-white rounded-full inline-block transform transition dark:bg-sky-900"></span>
+        <span
+          className={`w-4 h-4 bg-white rounded-full inline-block transform transition dark:bg-[#001E3C] ${
+            enabled ? 'translate-x-6' : 'translate-x-1'
+          }`}
+        ></span>
       </Switch>
       <ContextProvider>
         <Outlet />
       </ContextProvider>
-    </div>
+    </>
   );
 }
 

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { FetchContext } from '../../contexts/FetchContext';
 
-const UserContainer = () => {
+const UserContainer: React.FC = () => {
   const ctx = useContext(FetchContext);
 
   return (
-    <div className="m-auto bg-slate-100 w-2/4 h-5/6 rounded flex flex-col justify-around items-center py-10 px-14 ">
+    <div className="m-auto bg-sky-600 w-2/4 h-5/6 rounded flex flex-col justify-around items-center py-10 px-14 text-white dark:bg-white dark:text-[#001E3C] ">
       <img
         className="w-48 h-48 rounded-full"
         src={ctx.userData?.avatar_url}
