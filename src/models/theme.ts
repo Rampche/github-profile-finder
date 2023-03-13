@@ -1,4 +1,5 @@
 export type ThemeContextType = {
-  isDark: boolean;
-  toggleTheme: () => void;
+  theme: string | null | undefined;
+  toggleTheme: () => void | null | undefined;
+  /*  setTheme: React.Dispatch<React.SetStateAction<string | undefined | null>>; */
 };

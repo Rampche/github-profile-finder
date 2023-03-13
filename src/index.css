@@ -7,9 +7,17 @@
   }
 }
 
-.def-fx-col {
+ .def-fx-col {
   @apply flex flex-col justify-center items-center;
 }
 .def-fx-row {
   @apply flex flex-row justify-center items-center;
+}
+
+.default-dark-main {
+  @apply bg-[#001E3C] min-h-screen h-screen min-w-full w-screen def-fx-col;
+}
+
+.default-light-main {
+  @apply bg-white min-h-screen h-screen min-w-full w-screen def-fx-col;
 }

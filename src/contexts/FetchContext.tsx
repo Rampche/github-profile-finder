@@ -1,29 +1,16 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, ReactNode, useState } from 'react';
 import { ContextType } from '../models/fetchContext';
+//import { ThemeContextType } from '../models/theme';
 import { UserProps } from '../models/user';
 
-export const FetchContext = createContext<{
-  userData:
-    | {
-        avatar_url: string;
-        login: string;
-        name: string;
-        followers: number;
-        following: number;
-        public_repos: number;
-        bio: string;
-        location: string;
-      }
-    | undefined;
-  setUserData: React.Dispatch<React.SetStateAction<UserProps | undefined>>;
-}>({} as ContextType);
+export const FetchContext = createContext<ContextType>({} as ContextType);
 
-const ContextProvider = (props: any) => {
+const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [userData, setUserData] = useState<UserProps>();
 
   return (
     <FetchContext.Provider value={{ userData, setUserData }}>
-      {props.children}
+      {children}
     </FetchContext.Provider>
   );
 };
