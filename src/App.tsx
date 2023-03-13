@@ -16,7 +16,7 @@ function App() {
   const toggleTheme = () => setEnabled(!enabled);
 
   return (
-    <div className={`bg-white ${enabled ? 'dark:bg-sky-900' : ''}`}>
+    <div className={`bg-white ${enabled ? 'dark:bg-sky-900' : 'bg-white'}`}>
       <Switch
         checked={!enabled}
         onChange={toggleTheme}
