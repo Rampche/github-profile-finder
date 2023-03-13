@@ -1,26 +1,31 @@
-//Import of the pages:
-import Home from '../pages/Home';
-import Error from '../pages/Error';
-import UserInfo from '../pages/UserInfo';
-import App from '../App';
-import { createBrowserRouter } from 'react-router-dom';
-//import UserPortfolios from './routes/UserPortfolios';
+import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
+import Error from "../pages/Error";
+import Home from "../pages/Home";
+import UserInfo from "../pages/UserInfo";
 
 export const router = createBrowserRouter(
   [
     {
-      path: '/',
+      path: "/",
       element: <App />,
       children: [
-        { index: true, element: <Home /> },
-
-        { path: '/user', element: <UserInfo /> },
-        //      { path: '/user-portfolios', element: <UserPortfolios /> },
-        { path: '*', element: <Error /> },
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/user",
+          element: <UserInfo />,
+        },
+        {
+          path: "*",
+          element: <Error />,
+        },
       ],
     },
   ],
   {
-    basename: 'github-profile-finder',
+    basename: "/github-profile-finder",
   }
 );
